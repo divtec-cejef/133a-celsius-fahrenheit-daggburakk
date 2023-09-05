@@ -1,11 +1,13 @@
 /**
  * Fichier de base pour application web HTML/CSS/JS
- * @author  Steve Fallet
+ * @author  Burak DAG
  * @version 0.2
- * @since   2019-08-19
+ * @since   2023-09-05
  */
 'use strict'; // Demande un interprétation stricte du code
 
-let a = 'Bonjour';
+var celsius = prompt('Entrez la température en degrés Celsius :');
 
-console.log(a);
+var fahrenheit = (celsius * 9/5) + 32;
+
+alert(celsius + ' degrés Celsius équivaut à ' + fahrenheit + 'degrés Fahrenheit');

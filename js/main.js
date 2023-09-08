@@ -4,10 +4,30 @@
  * @version 0.2
  * @since   2023-09-05
  */
-'use strict'; // Demande un interprétation stricte du code
+// Demande un interprétation stricte du code
+'use strict';
+document.addEventListener('DOMContentLoaded', function(){
 
-var celsius = prompt('Entrez la température en degrés Celsius :');
+    let inputDegre = document.querySelector('element1');
+    let butDegre=document.querySelector('but1');
+    let outInput= document.querySelector('outInput');
 
-var fahrenheit = (celsius * 9/5) + 32;
+    butDegre.addEventListener('click',function (){
+    let valueCel=parseInt(inputDegre.value);
 
-alert(celsius + ' degrés Celsius équivaut à ' + fahrenheit + 'degrés Fahrenheit');
+    if(isNaN(valueCel)){
+    alert('Entrez un nombre');
+
+    }else{
+       outInput.textContent= document.querySelector('outInput').innerHTML=(valueCel-32)/1.8;
+    }
+
+        }
+    );
+
+});
+
+
+
+
+

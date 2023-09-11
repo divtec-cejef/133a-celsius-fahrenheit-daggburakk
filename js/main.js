@@ -6,26 +6,28 @@
  */
 // Demande un interprétation stricte du code
 'use strict';
-document.addEventListener('DOMContentLoaded', function(){
+document.addEventListener('DOMContentLoaded', function () {
 
-    let inputDegre = document.querySelector('element1');
-    let butDegre=document.querySelector('but1');
-    let outInput= document.querySelector('outInput');
+        let inputDegre = document.querySelector('#element1');
+        let butDegre = document.querySelector('.but1');
+        let outInput = document.querySelector('.outInput');
+        let listHist = document.querySelector('#historique');
 
-    butDegre.addEventListener('click',function (){
-    let valueCel=parseInt(inputDegre.value);
+        butDegre.addEventListener('click', () => {
+                let valueCel = parseInt(inputDegre.value);
+                outInput.value = (valueCel * 9 / 5) + 32;
+                listHist.innerHTML += '<li>' + inputDegre.value + '&deg;C' + '=' + outInput.value +
+                    '&deg;F' + '</li>';
+                if (isNaN(valueCel)) {
+                    alert('Entrez un nombre');
 
-    if(isNaN(valueCel)){
-    alert('Entrez un nombre');
-
-    }else{
-       outInput.textContent= document.querySelector('outInput').innerHTML=(valueCel-32)/1.8;
+                } else {
+                    outInput.innerText = (valueCel * 9 / 5) + 32;
+                }
+            }
+        );
     }
-
-        }
-    );
-
-});
+);
 
 
 
